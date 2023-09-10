@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food-Delievery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Crimson Text', serif;
+            scroll-behavior: smooth;
+        }
+      .nav{
+        display: block;
+        height: 40px;
+        position: relative;
+
+      }
+      .bg{
+        width: 100%;
+        height: 45px;
+        background-color: black;
+        opacity: 0.3;
+        display:block;
+        position:fixed;
+        display: flex;
+        z-index: 2;
+      }
+      .logo{
+        height: 40px;
+        display:block;
+        position:fixed;
+        display: flex;
+        z-index: 2;
+
+      }
+      .logo li{
+        z-index: 2;
+       display: flex;
+        margin: 13px 2px;
+        justify-content: space-evenly;
+        
+      }
+      .logo img{
+        height: 33px;
+        width: 33px;
+        border-radius: 23px;
+        background-color: rgb(155, 150, 150);
+       margin: 4px 11px;
+      }
+      .logo li ul a{
+        text-decoration: none;
+         display: flex;
+        padding: 0px 15px;
+        height: 20px;
+        color:white;
+        cursor:pointer;
+        border-radius: 23px;
+      }
+      .logo li ul a:hover{
+        background-color: rgb(25, 22, 22);
+      }
+      .logo li ul a:active{
+        background-color: rgb(237, 217, 217);
+      }
+      .home::before{
+        content: "";
+        position: absolute;
+        height:100%;
+        top:-50px;
+        left:0px;
+        width: 100%;
+        z-index: -1;
+        opacity:0.89;
+        filter: brightness(50%);
+        background: url("https://cdn.pixabay.com/photo/2017/10/22/21/02/food-2879265_1280.jpg") no-repeat center center/cover;
+      }
+      .home{
+        width:100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color:white;
+      }
+      .aa1{
+        padding: 10px;
+        margin-top: 250px;
+        font-size: 90px;
+        color: white;
+      }
+      .aa2{
+       margin:0 100px 200px 200px;
+       font-size: 20px;
+       text-align: center;
+      }
+      .sbb{
+        border: 1px solid black;
+        border-radius: 25px;
+        margin-top: 20px;
+      }
+      .service{
+        overflow-x:scroll;
+        margin-top: 29px;
+        width: 100%;
+        display: flex;
+        overflow:scroll;
+      }
+      .sm{
+        margin-top:10px;
+        font-size: 40px;
+        text-align: center;
+        text-shadow: 1px 1px 1px rgb(52, 43, 43);
+        cursor: pointer;
+      }
+     .service img{
+        height: 250px;
+        width:250px;
+        border-radius: 23px;
+        display: flex;
+        padding: 10px;
+        
+      }
+      .food{
+        margin: 25px;
+        color: white;
+        text-decoration:wavy;
+        text-shadow: 1px 1px 1px rgb(52, 43, 43);
+        padding: 10px;
+        border: 2px solid rgb(212, 202, 202);
+        background-color: rgb(70, 59, 59);
+        border-radius: 23px;
+        display:flex;
+        align-items: center;
+        font-size: 25px;
+        flex-direction: column;
+        justify-content: center;
+
+      }
+      .abb{
+        border: 1px solid black;
+        border-radius: 25px;
+        margin-top: 10px;
+      }
+      .abt{
+        margin-top:100px;
+        font-size: 40px;
+        text-shadow: 1px 1px 1px black;
+        text-align: center;
+      }
+      .ab{
+       margin:25px 40px;
+       font-size: 20px;
+       text-align: center;
+      }
+      .abbb{
+        border: 1px solid black;
+        border-radius: 25px;
+        margin-top: 10px;
+        position: relative;
+      }
+      .abbb::before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width:100%;
+        height:100%;
+        filter: brightness(60%);
+        background: url("https://media.istockphoto.com/id/1143681097/video/female-hands-interact-hud-hologram-contact-us.jpg?s=640x640&k=20&c=dbN38vGq0JSSLwgiRVOHPmpz8-6aD5A3Bb00UQCh5ps=") center center/cover;
+        border-radius: 23px;;
+      }
+      .cbb{
+        margin-top:10px;
+        font-size: 40px;
+        text-shadow: 1px 1px 1px black;
+        text-align: center;
+        color: white;
+      }
+     .f{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0px;
+      padding: 5px;
+     }
+     .in{
+      width: 33%;
+      margin: 5px;
+      padding: 10px;
+      border: 2px solid black;
+      border-radius: 20px;
+      transition: all 0.5s ease-in-out;
+      background-color: rgb(254, 254, 254);
+      opacity: 0.5;
+      filter: brightness(120%);
+     }
+     .in::placeholder{
+      color: black;
+     }
+     .in:focus{
+      width: 35%;
+      height: 20px;
+      font-size: 25px;
+      opacity: 0.7;
+      color: black;
+     }
+     .btn{
+      height: 40px;
+      width:70px;
+      border: 1px solid black;
+      border-radius: 15px;
+      cursor: pointer;
+      margin-top: 5px;
+      opacity: 0.5;
+     }
+     .btn:hover{
+      opacity: 0.9;
+      background-color: black;
+      color: white;
+     }
+     @media screen and (max-width: 530px)and (min-width:340px) {
+      .logo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+      }
+      .bg{
+        height: 90px;
+        opacity: 0.8;
+      }
+      .home::before{
+        top:-40px;
+       }
+      .service{
+        display: flex;
+        flex-direction: column;
+      }
+      .home{
+        width: 198%;
+        height: 270vh;
+      }
+      .home::before{
+        height: 250vh;
+      }
+      .sbb{
+        width: 198%;
+        margin-top: 131px;
+      }
+      .abb{
+        width:198%;
+      }
+      .abbb{
+        width: 198%;
+        margin-top: 80px;
+      }
+      .cbb{
+        margin-top: 150px;
+      }
+      .f{
+        margin-bottom: 150px;
+      }
+      .in{
+        margin: 20px;
+      }
+      .logo li ul a{
+        font-size: x-large;
+      }
+   
+}
+  @media screen and (max-width: 340px){
+    .logo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+      }
+      .bg{
+        height: 110px;
+        opacity: 0.8;
+      }
+      .logo li ul a{
+        font-size: larger;
+      }
+      .service{
+        display: flex;
+        flex-direction: column;
+      }
+      .home{
+        width: 250%;
+        height: 350vh;
+      }
+      .home::before{
+        height: 350vh;
+      }
+      .sbb{
+        width: 250%;
+        margin-top: 561px
+      }
+      .abb{
+        width:250%;
+      }
+      .abbb{
+        width: 250%;
+        margin-top: 80px;
+      }
+      .cbb{
+        margin-top: 150px;
+      }
+      .f{
+        margin-bottom: 150px;
+      }
+      .in{
+        margin: 20px;
+      }
+      .abt{
+        margin-top: 100px;
+      }
+
+  }
+  
+    </style>
+</head>
+<body>
+   <nav id="navabar" class="nav">
+    <div class="bg" id="bgm"></div>
+    <div class="logo">
+        <img src="https://cdn.pixabay.com/photo/2015/10/20/21/05/mcdonald-998495_1280.png" alt="logo">
+        <li class="n">
+            <ul class="item Home" ><a class="anc" id="a" href="#Home">Home</a></ul>
+            <ul class="item Services" ><a class="anc" id="b" href="#Services">Our Services</a></ul>
+            <ul class="item About" ><a class="anc" id="c" href="#About">About</a></ul>
+            <ul class="item Contact" ><a class="anc" id="d" href="#Contact">Contact Us</a></ul>
+            <ul class="item dark" ><a class="anc" onclick="darkmode()">Night Mode</a></ul>
+        </li>
+    </div>
+   </nav>
+   <div  class="home" id="Home"><div class="aa1" id="wel">WELCOME</div><div class="aa2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia tempora libero ipsam, vitae maxime sunt rerum mollitia rem accusamus, amet alias, modi minima veniam cumque repellat? Fuga, distinctio!</div></div>
+     <div class="sbb">
+    <div class="sm" id="ss">Our Services</div>
+    <div class="service" id="Services">
+    <div class="food"><strong>Food delievery</strong><img src="https://cdn.pixabay.com/photo/2016/05/05/09/19/pizza-1373508_1280.jpg"></div>
+    <div class="food"><strong>Food Catering</strong><img src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_1280.jpg"></div>
+    <div class="food"><strong>Bulk Ordering</strong><img src="https://www.allrecipes.com/thmb/5JVfA7MxfTUPfRerQMdF-nGKsLY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/25473-the-perfect-basic-burger-DDMFS-4x3-56eaba3833fd4a26a82755bcd0be0c54.jpg"></div>
+    <div class="food">Food Shopping<img src="https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_1280.jpg"></div>
+   </div>
+  </div>
+   <div class="abb" id="About">
+   <div class="abt">About Us</div>
+   <p class="ab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, maxime labore recusandae corrupti animi voluptate consectetur perferendis vero quidem facere, pariatur fugiat ex, magnam aliquam nobis quas eum at molestiae! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, quisquam incidunt. Possimus commodi inventore numquam cupiditate cumque nam aut a, molestias ea laboriosam laborum natus! Eum corrupti nihil inventore sapiente. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos recusandae magnam veritatis, perferendis nam nostrum, magni placeat at quisquam temporibus, laboriosam soluta ratione perspiciatis iste minima reprehenderit odit tenetur quaerat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum magni ullam nisi, adipisci corrupti sequi consequuntur, itaque, rem non dolorum voluptates consequatur reprehenderit dicta voluptate amet modi aut velit minima.</p>
+  </div>
+  <div id="Contact" class="abbb">
+    <div class="cbb">Contact Us</div>
+    <form action="/ritvikphp/food_del.php" method="post" class="f">
+        <input class="in" type="text" placeholder="Your Name" name="name">
+        <input class="in" type="email" placeholder="Your Email" name="email">
+        <input class="in" type="tel" placeholder="Your Phone no" name="mobile">
+        <button class="btn">SUBMIT</button>
+    </form>
+  </div>
+  <script>
+    let i=0;
+    function darkmode(){
+      if(i<1){
+      document.body.style.backgroundColor="black"
+      document.getElementById("bgm").style.opacity="1";
+      document.getElementById("Home").style.backgroundColor="black";
+      document.getElementById("Contact").style.backgroundColor="black";
+      document.getElementById("Contact").style.color="white";
+      document.getElementById("About").style.backgroundColor="black";
+      document.getElementById("About").style.color="white";
+      document.getElementById("Services").style.backgroundColor="black";
+      document.getElementById("ss").style.color="white";
+      i++
+      }
+      else{
+      location.reload();
+    }}
+    window.addEventListener('scrollend', () => {
+      const ids=['Home','Services','About','Contact']
+      const cl=['a','b','c','d']
+      for(var i=0;i<4;i++){
+      var someDiv = document.getElementById(ids[i]);
+      var dis = someDiv.getBoundingClientRect().top;
+      if(dis<=someDiv.offsetHeight){
+        var a=document.getElementById(cl[i]);
+        a.style.color="red";
+          for(var j=0;j<4;j++){
+            if(i!=j){
+          var b=document.getElementById(cl[j]);
+          b.style.color="white";
+        }}}}
+        
+      }
+  );
+  function anim(){
+    var w=document.getElementById("wel");
+    if(w.innerHTML!="to your food stop"){
+    w.innerHTML="to your food stop";
+  }
+  else{w.innerHTML="WELCOME"}
+  setTimeout(anim,500);}
+  window.addEventListener('load',() =>{
+    setTimeout(anim,500);
+  })
+  </script>
+</body>
+</html>
